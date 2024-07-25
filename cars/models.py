@@ -6,6 +6,10 @@ class EngineVolume(models.Model):
 
     def __str__(self) -> str:
         return f'{self.engine}'
+    
+    class Meta:
+        verbose_name = 'Engine volume'
+        verbose_name_plural = 'Engine volume'
 
 
 class Transmission(models.Model):
