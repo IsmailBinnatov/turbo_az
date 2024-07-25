@@ -1,6 +1,13 @@
 from django.db import models
 
 
+class FuelType(models.Model):
+    fuel_type = models.CharField(max_length=64)
+
+    def __str__(self) -> str:
+        return f'{self.fuel_type}'
+
+
 class Color(models.Model):
     color = models.CharField(max_length=64)
 
