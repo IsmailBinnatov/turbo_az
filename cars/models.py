@@ -1,6 +1,17 @@
 from django.db import models
 
 
+class OwnerCount(models.Model):
+    count = models.CharField(max_length=64)
+
+    def __str__(self) -> str:
+        return f'{self.count}'
+    
+    class Meta:
+        verbose_name = 'Owner count'
+        verbose_name_plural = 'Owners count'
+
+
 class MeasureUnit(models.Model):
     measure_unit = models.CharField(max_length=64)
 
