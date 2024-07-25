@@ -1,6 +1,13 @@
 from django.db import models
 
 
+class Transmission(models.Model):
+    transmission = models.CharField(max_length=64)
+
+    def __str__(self) -> str:
+        return f'{self.transmission}'
+
+
 class DriveWheel(models.Model):
     drive_wheel = models.CharField(max_length=64)
 
