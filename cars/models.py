@@ -1,6 +1,13 @@
 from django.db import models
 
 
+class DriveWheel(models.Model):
+    drive_wheel = models.CharField(max_length=64)
+
+    def __str__(self) -> str:
+        return f'{self.drive_wheel}'
+
+
 class FuelType(models.Model):
     fuel_type = models.CharField(max_length=64)
 
