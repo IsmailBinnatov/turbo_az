@@ -1,0 +1,10 @@
+from django.contrib import admin
+from .models import *
+
+
+admin.site.register(CarBrand)
+admin.site.register(CarModel)
+admin.site.register(MoneyCurrency)
+admin.site.register(CarPhoto)
+admin.site.register(Car)
+admin.site.register(City)
