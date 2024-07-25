@@ -1,6 +1,13 @@
 from django.db import models
 
 
+class Color(models.Model):
+    color = models.CharField(max_length=64)
+
+    def __str__(self) -> str:
+        return f'{self.color}'
+
+
 class BanType(models.Model):
     ban = models.CharField(max_length=64)
 
