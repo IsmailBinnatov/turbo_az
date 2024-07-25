@@ -1,6 +1,17 @@
 from django.db import models
 
 
+class MeasureUnit(models.Model):
+    measure_unit = models.CharField(max_length=64)
+
+    def __str__(self) -> str:
+        return f'{self.measure_unit}'
+
+    class Meta:
+        verbose_name = 'Measure unit'
+        verbose_name_plural = 'Measure unit'
+
+
 class EngineVolume(models.Model):
     engine = models.CharField(max_length=64)
 
