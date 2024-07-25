@@ -1,6 +1,13 @@
 from django.db import models
 
 
+class EngineType(models.Model):
+    engine = models.CharField(max_length=64)
+
+    def __str__(self) -> str:
+        return f'{self.engine}'
+
+
 class Transmission(models.Model):
     transmission = models.CharField(max_length=64)
 
