@@ -1,6 +1,28 @@
 from django.db import models
 
 
+class Mileage(models.Model):
+    mileage = models.PositiveSmallIntegerField()
+
+    def __str__(self) -> str:
+        return f'{self.mileage}'
+    
+    class Meta:
+        verbose_name = 'Mileage'
+        verbose_name_plural = 'Mileage'
+
+
+class HorsePower(models.Model):
+    horse_power = models.PositiveSmallIntegerField()
+
+    def __str__(self) -> str:
+        return f'{self.horse_power}'
+    
+    class Meta:
+        verbose_name = 'Horse power'
+        verbose_name_plural = 'Horse power'
+
+
 class EngineVolume(models.Model):
     engine = models.CharField(max_length=64)
 
