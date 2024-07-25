@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class EngineType(models.Model):
+class EngineVolume(models.Model):
     engine = models.CharField(max_length=64)
 
     def __str__(self) -> str:
