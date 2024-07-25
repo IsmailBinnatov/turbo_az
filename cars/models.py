@@ -1,6 +1,13 @@
 from django.db import models
 
 
+class BanType(models.Model):
+    ban = models.CharField(max_length=64)
+
+    def __str__(self) -> str:
+        return f'{self.ban}'
+
+
 class City(models.Model):
     name = models.CharField(max_length=64)
 
@@ -34,7 +41,7 @@ class MoneyCurrency(models.Model):
 
     def __str__(self) -> str:
         return f'{self.name}'
-    
+
     class Meta:
         verbose_name = 'Currency'
         verbose_name_plural = 'Currencies'
@@ -49,6 +56,8 @@ class Car(models.Model):
         'MoneyCurrency', on_delete=models.SET_NULL, null=True, blank=True)
     city = models.ForeignKey(
         'City', on_delete=models.SET_NULL, null=True, blank=True)
+    ban = models.ForeignKey(
+        'BanType', on_delete=models.SET_NULL, null=True, blank=True)
     year = models.PositiveIntegerField()
     price = models.DecimalField(max_digits=10, decimal_places=2)
     description = models.TextField()
