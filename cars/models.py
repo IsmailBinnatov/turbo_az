@@ -6,7 +6,7 @@ class OwnerCount(models.Model):
 
     def __str__(self) -> str:
         return f'{self.count}'
-    
+
     class Meta:
         verbose_name = 'Owner count'
         verbose_name_plural = 'Owners count'
@@ -119,6 +119,20 @@ class Car(models.Model):
         'City', on_delete=models.SET_NULL, null=True, blank=True)
     ban = models.ForeignKey(
         'BanType', on_delete=models.SET_NULL, null=True, blank=True)
+    color = models.ForeignKey(
+        'Color', on_delete=models.SET_NULL, null=True, blank=True)
+    fuel = models.ForeignKey(
+        'FuelType', on_delete=models.SET_NULL, null=True, blank=True)
+    drive_wheel = models.ForeignKey(
+        'DriveWheel', on_delete=models.SET_NULL, null=True, blank=True)
+    transmission = models.ForeignKey(
+        'Transmission', on_delete=models.SET_NULL, null=True, blank=True)
+    engine_volume = models.ForeignKey(
+        'EngineVolume', on_delete=models.SET_NULL, null=True, blank=True)
+    measure_unit = models.ForeignKey(
+        'MeasureUnit', on_delete=models.SET_NULL, null=True, blank=True)
+    owners_count = models.ForeignKey(
+        'OwnerCount', on_delete=models.SET_NULL, null=True, blank=True)
     mileage = models.PositiveSmallIntegerField(null=True, blank=True)
     horse_power = models.PositiveSmallIntegerField(null=True, blank=True)
     year = models.PositiveIntegerField()
