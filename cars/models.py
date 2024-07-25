@@ -1,34 +1,12 @@
 from django.db import models
 
 
-class Mileage(models.Model):
-    mileage = models.PositiveSmallIntegerField()
-
-    def __str__(self) -> str:
-        return f'{self.mileage}'
-    
-    class Meta:
-        verbose_name = 'Mileage'
-        verbose_name_plural = 'Mileage'
-
-
-class HorsePower(models.Model):
-    horse_power = models.PositiveSmallIntegerField()
-
-    def __str__(self) -> str:
-        return f'{self.horse_power}'
-    
-    class Meta:
-        verbose_name = 'Horse power'
-        verbose_name_plural = 'Horse power'
-
-
 class EngineVolume(models.Model):
     engine = models.CharField(max_length=64)
 
     def __str__(self) -> str:
         return f'{self.engine}'
-    
+
     class Meta:
         verbose_name = 'Engine volume'
         verbose_name_plural = 'Engine volume'
@@ -119,6 +97,8 @@ class Car(models.Model):
         'City', on_delete=models.SET_NULL, null=True, blank=True)
     ban = models.ForeignKey(
         'BanType', on_delete=models.SET_NULL, null=True, blank=True)
+    mileage = models.PositiveSmallIntegerField(null=True, blank=True)
+    horse_power = models.PositiveSmallIntegerField(null=True, blank=True)
     year = models.PositiveIntegerField()
     price = models.DecimalField(max_digits=10, decimal_places=2)
     description = models.TextField()
