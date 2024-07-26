@@ -1,12 +1,23 @@
 from django.db import models
 
 
+class MarketVersion(models.Model):
+    version = models.CharField(max_length=64)
+
+    def __str__(self) -> str:
+        return f'{self.version}'
+
+    class Meta:
+        verbose_name = 'Market version'
+        verbose_name_plural = 'Market version'
+
+
 class PlaceCount(models.Model):
     count = models.CharField(max_length=2)
 
     def __str__(self) -> str:
         return f'{self.count}'
-    
+
     class Meta:
         verbose_name = 'Place count'
         verbose_name_plural = 'Places count'
