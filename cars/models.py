@@ -185,6 +185,8 @@ class Car(models.Model):
         'PlaceCount', on_delete=models.SET_NULL, null=True, blank=True)
     mileage = models.PositiveSmallIntegerField(null=True, blank=True)
     horse_power = models.PositiveSmallIntegerField(null=True, blank=True)
+    is_premium = models.BooleanField(default=False)
+    is_vip = models.BooleanField(default=False)
     has_alloy_wheels = models.BooleanField(default=False)
     has_abs = models.BooleanField(default=False)
     has_hatch = models.BooleanField(default=False)
