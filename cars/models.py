@@ -197,7 +197,6 @@ class Car(models.Model):
     has_leather_interior = models.BooleanField(default=False)
     has_xenon = models.BooleanField(default=False)
     has_rear_view_camera = models.BooleanField(default=False)
-    has_parking_sensors = models.BooleanField(default=False)
     has_side_curtains = models.BooleanField(default=False)
     year = models.PositiveIntegerField()
     price = models.DecimalField(max_digits=10, decimal_places=2)
