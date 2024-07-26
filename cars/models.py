@@ -1,6 +1,17 @@
 from django.db import models
 
 
+class PlaceCount(models.Model):
+    count = models.CharField(max_length=2)
+
+    def __str__(self) -> str:
+        return f'{self.count}'
+    
+    class Meta:
+        verbose_name = 'Place count'
+        verbose_name_plural = 'Places count'
+
+
 class OwnerCount(models.Model):
     count = models.CharField(max_length=64)
 
@@ -138,6 +149,8 @@ class Car(models.Model):
         'MeasureUnit', on_delete=models.SET_NULL, null=True, blank=True)
     owners_count = models.ForeignKey(
         'OwnerCount', on_delete=models.SET_NULL, null=True, blank=True)
+    place_count = models.ForeignKey(
+        'PlaceCount', on_delete=models.SET_NULL, null=True, blank=True)
     mileage = models.PositiveSmallIntegerField(null=True, blank=True)
     horse_power = models.PositiveSmallIntegerField(null=True, blank=True)
     year = models.PositiveIntegerField()
