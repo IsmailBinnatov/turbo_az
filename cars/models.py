@@ -1,8 +1,18 @@
 from django.db import models
 
 
+class Status(models.Model):
+    status = models.CharField(max_length=32)
+
+    def __str__(self) -> str:
+        return f'{self.status}'
+
+    class Meta:
+        verbose_name = 'Status'
+        verbose_name_plural = 'Statuses'
+
 class MarketVersion(models.Model):
-    version = models.CharField(max_length=64)
+    version = models.CharField(max_length=32)
 
     def __str__(self) -> str:
         return f'{self.version}'
