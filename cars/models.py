@@ -1,15 +1,26 @@
 from django.db import models
 
 
-class Status(models.Model):
+class SaleStatus(models.Model):
     status = models.CharField(max_length=32)
 
     def __str__(self) -> str:
         return f'{self.status}'
 
     class Meta:
-        verbose_name = 'Status'
-        verbose_name_plural = 'Statuses'
+        verbose_name = 'Sale status'
+        verbose_name_plural = 'Sales status'
+
+
+class CarСondition(models.Model):
+    status = models.CharField(max_length=32)
+
+    def __str__(self) -> str:
+        return f'{self.status}'
+
+    class Meta:
+        verbose_name = 'Car condition'
+        verbose_name_plural = 'Cars conditions'
 
 class MarketVersion(models.Model):
     version = models.CharField(max_length=32)
