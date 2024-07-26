@@ -108,6 +108,11 @@ class MoneyCurrency(models.Model):
         verbose_name_plural = 'Currencies'
 
 
+class CarPhoto(models.Model):
+    car_photo = models.ImageField(
+        upload_to='uploads/cars/', null=True, blank=True)
+
+
 class Car(models.Model):
     car_brand = models.ForeignKey(
         'CarBrand', on_delete=models.SET_NULL, null=True, blank=True)
@@ -140,8 +145,3 @@ class Car(models.Model):
     description = models.TextField()
     car_photo = models.ForeignKey(
         'CarPhoto', on_delete=models.SET_NULL, null=True, blank=True)
-
-
-class CarPhoto(models.Model):
-    car_photo = models.ImageField(
-        upload_to='uploads/cars/', null=True, blank=True)
